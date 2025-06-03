@@ -1,0 +1,24 @@
+# Crear la unidad organizativa "People"
+dn: ou=People,dc=ejemplo,dc=com
+objectClass: organizationalUnit
+ou: People
+
+# Crear un usuario dentro de "People"
+dn: uid=Susana,ou=People,dc=ejemplo,dc=com
+objectClass: inetOrgPerson
+cn: Susana Lopez
+sn: Lopez
+uid: Susana
+mail: susana@ejemplo.com
+userPassword: Susana. 123
+
+# Crear otra unidad organizativa "Groups"
+dn: ou=Groups,dc=ejemplo,dc=com
+objectClass: organizationalUnit
+ou: Groups
+
+# Crear un grupo
+dn: cn=admin,ou=Groups,dc=ejemplo,dc=com
+objectClass: groupOfNames
+cn: admins
+member: uid=Susana,ou=People,dc=ejemplo,dc=com
